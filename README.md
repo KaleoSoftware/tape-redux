@@ -22,7 +22,7 @@ test('app reducer openMenu', reducerTest(
 
 ## Motivation
 
-[Dan Abramov](https://github.com/gaearon/)'s *amazing* egghead tutorial on Redux showed us how to write tests for redux.
+[Dan Abramov](https://github.com/gaearon/)'s *amazing* [egghead tutorial](https://egghead.io/series/getting-started-with-redux) on Redux showed us how to write tests for redux.
 
 But writing those tests over and over can get cumbersome.
 
