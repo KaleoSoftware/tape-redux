@@ -89,7 +89,7 @@ test('app action openMenu', (t) => {
 	t.deepEqual(
 		actions.openMenu,
 		{type: types.OPEN_MENU},
-		'openMenu should have OPEN_MENU as type'
+		'openMenu() should have OPEN_MENU as type'
 	)
 	t.end()
 })
@@ -107,7 +107,7 @@ import * as actions from '../../src/actions/app'
 test('app action openMenu', actionTest(
 	actions.openMenu,
 	{type: types.OPEN_MENU},
-	'openMenu should have OPEN_MENU as type'
+	'openMenu() should have OPEN_MENU as type'
 ))
 ```
 
