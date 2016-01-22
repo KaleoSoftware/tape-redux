@@ -7,6 +7,15 @@ Write [tape](https://github.com/substack/tape) tests for redux blazingly fast.
 npm install --save-dev tape-redux
 ```
 
+```js
+test('app reducer openMenu', reducerTest(
+    app,
+    {menuOpen: false},
+    actions.openMenu,
+    {menuOpen: true}
+))
+```
+
 ## Why tape instead of mocha?
 
 [Boom.](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.grafh7q7s)
