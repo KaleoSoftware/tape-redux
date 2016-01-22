@@ -9,10 +9,11 @@ npm install --save-dev tape-redux
 
 ```js
 test('app reducer openMenu', reducerTest(
-    app,                 // Reducer
-    {menuOpen: false},   // Initial state
-    actions.openMenu,    // Action
-    {menuOpen: true}     // Final state
+    app,                              // Reducer
+    {menuOpen: false},                // Initial state
+    actions.openMenu,                 // Action
+    {menuOpen: true},                 // Final state
+    'openMenu should change the menuOpen property to true'   // Description
 ))
 ```
 
@@ -48,7 +49,8 @@ test('app reducer openMenu', (t) => {
 
 	t.deepEqual(
 		app(stateBefore, actions.openMenu()),
-		stateAfter
+		stateAfter,
+		'openMenu should change the menuOpen property to true'
 	)
 
 	t.end()
@@ -68,7 +70,8 @@ test('app reducer openMenu', reducerTest(
 	app,
 	{menuOpen: false},
 	actions.openMenu,
-	{menuOpen: true}
+	{menuOpen: true},
+	'openMenu should change the menuOpen property to true'
 ))
 ```
 
@@ -84,13 +87,15 @@ import * as actions from '../../src/actions/app'
 
 test('app action openMenu', (t) => {
 	t.deepEqual(
-		actions.openMenu, {type: types.OPEN_MENU}
+		actions.openMenu,
+		{type: types.OPEN_MENU},
+		'openMenu should have OPEN_MENU as type'
 	)
 	t.end()
 })
 ```
 
-and here's that same action test in redux-tape:
+and here's that same action test in tape-redux:
 
 ```js
 import test from 'tape-catch'
@@ -100,7 +105,9 @@ import * as types from '../../src/constants/ActionTypes'
 import * as actions from '../../src/actions/app'
 
 test('app action openMenu', actionTest(
-	actions.openMenu, {type: types.OPEN_MENU}
+	actions.openMenu,
+	{type: types.OPEN_MENU},
+	'openMenu should have OPEN_MENU as type'
 ))
 ```
 
@@ -115,7 +122,8 @@ test('REDUCER_NAME reducer ACTION_NAME', reducerTest(
 	reducer,
 	stateBefore,
 	action,
-	stateAfter
+	stateAfter[,
+	'description']
 ))
 ```
 
@@ -126,7 +134,8 @@ Action tests:
 ```js
 test('GROUP_NAME action ACTION_NAME', actionTest(
 	actionCreator,
-	action
+	action[,
+	'description']
 ))
 ```
 
@@ -134,8 +143,9 @@ if you have an action creator that accepts an argument, use [.bind](https://deve
 
 ```js
 test('GROUP_NAME action ACTION_NAME', actionTest(
-	actionCreator.bind(this, argument),
-	action
+	actionCreator.bind(null, argument),
+	action[,
+	'description']
 ))
 ```
 

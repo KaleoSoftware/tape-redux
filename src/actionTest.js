@@ -1,6 +1,6 @@
-export default (actionCreator, action) => (
+export default (actionCreator, action, description) => (
 	(t) => {
-		t.deepEqual(actionCreator(), action)
+		t.deepEqual(actionCreator(), action, description)
 		t.end()
 	}
 )

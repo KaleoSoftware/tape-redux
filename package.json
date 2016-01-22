@@ -1,6 +1,6 @@
 {
   "name": "tape-redux",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Super simple testing for Redux apps.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
