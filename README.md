@@ -9,10 +9,10 @@ npm install --save-dev tape-redux
 
 ```js
 test('app reducer openMenu', reducerTest(
-    app,                              // Reducer
-    {menuOpen: false},                // Initial state
-    actions.openMenu,                 // Action
-    {menuOpen: true},                 // Final state
+    app,                                                     // Reducer
+    {menuOpen: false},                                       // Initial state
+    actions.openMenu,                                        // Action
+    {menuOpen: true},                                        // Final state
     'openMenu should change the menuOpen property to true'   // Description
 ))
 ```
