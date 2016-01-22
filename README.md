@@ -130,7 +130,7 @@ test('GROUP_NAME action ACTION_NAME', actionTest(
 ))
 ```
 
-if you have an action creator that accepts an argument:
+if you have an action creator that accepts an argument, use [.bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind):
 
 ```js
 test('GROUP_NAME action ACTION_NAME', actionTest(
