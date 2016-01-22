@@ -134,7 +134,7 @@ if you have an action creator that accepts an argument, use [.bind](https://deve
 
 ```js
 test('GROUP_NAME action ACTION_NAME', actionTest(
-	actionCreator.bind(this, argument),
+	actionCreator.bind(null, argument),
 	action
 ))
 ```
