@@ -43,12 +43,13 @@ test('app reducer openMenu', (t) => {
 	const stateAfter = {
 		menuOpen: true
 	}
+	const action = actions.openMenu()
 
 	deepFreeze(stateBefore)
-	deepFreeze(stateAfter)
+	deepFreeze(action)
 
 	t.deepEqual(
-		app(stateBefore, actions.openMenu()),
+		app(stateBefore, action),
 		stateAfter,
 		'openMenu should change the menuOpen property to true'
 	)
